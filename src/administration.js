@@ -18,7 +18,7 @@ class Administration extends React.Component {
     console.log("usersData------------->", usersData);
     return (
       <div>
-        {loginUser && usersData && usersData.length > 0 ? (
+        {loginUser.loginUser && usersData && usersData.length > 0 ? (
           <table>
             <tr>
               <th>First Name</th>

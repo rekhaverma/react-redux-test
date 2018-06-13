@@ -1,5 +1,4 @@
 function usersData(state = [], action) {
-  console.log("state and action.result", state, action);
   switch (action.type) {
     case "CONTACTUSINFO":
       return [

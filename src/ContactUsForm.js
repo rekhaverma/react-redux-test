@@ -41,18 +41,15 @@ class ContactUsForm extends Component {
       email: this.state.email,
       phone: this.state.phone
     };
-    console.log("this--------->", this.props);
     store.dispatch(saveContactUsInfo(payload));
   };
 
   handleInputChange = inputName => e => {
-    console.log("event, fieldName", e, inputName);
     this.setState({
       [inputName]: e.target.value
     });
   };
   render() {
-    console.log("store in --------", store);
     return (
       <div className="">
         <form>
