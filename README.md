@@ -1,3 +1,10 @@
+### steps to run the app:
+ - clone repo by pasting `https://github.com/rekhaverma/react-redux-test.git`
+ - Run `npm install`
+ - Run app by typing `npm start`
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
