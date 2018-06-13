@@ -42,6 +42,10 @@ class ContactUsForm extends Component {
       phone: this.state.phone
     };
     store.dispatch(saveContactUsInfo(payload));
+    toastr.success(
+      "Your information has been added successfully!!!",
+      "Success"
+    );
   };
 
   handleInputChange = inputName => e => {
