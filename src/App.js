@@ -12,14 +12,10 @@ class App extends Component {
     browserHistory.push("/");
   };
   render() {
+    // Make menu active on the basis of path selected
     var currentLocation = this.props.location.pathname;
-    console.log(
-      "var currentLocation = this.props.location.pathname",
-      this.props.location.pathname
-    );
-    console.log("state of aaap", store.getState());
     const { loginUser } = store.getState();
-    console.log("this.props", this.props);
+    console.log("loginUser------------------->", loginUser);
     return (
       <div className="App">
         <header>
@@ -29,33 +25,36 @@ class App extends Component {
                 Home
               </Link>
             </li>
-            {!loginUser && (
-              <li>
-                <Link
-                  to="/login"
-                  className={currentLocation === "/login" ? "active" : ""}
-                >
-                  Signin
-                </Link>
-              </li>
-            )}
-            {loginUser && (
-              <li>
-                <Link
-                  to="/administration"
-                  className={
-                    currentLocation === "/administration" ? "active" : ""
-                  }
-                >
-                  Administration
-                </Link>
-              </li>
-            )}
-            {loginUser && (
-              <li>
-                <a onClick={this.logout}>logout</a>
-              </li>
-            )}
+            {loginUser &&
+              !loginUser.loginUser && (
+                <li>
+                  <Link
+                    to="/login"
+                    className={currentLocation === "/login" ? "active" : ""}
+                  >
+                    Signin
+                  </Link>
+                </li>
+              )}
+            {loginUser &&
+              loginUser.loginUser && (
+                <li>
+                  <Link
+                    to="/administration"
+                    className={
+                      currentLocation === "/administration" ? "active" : ""
+                    }
+                  >
+                    Administration
+                  </Link>
+                </li>
+              )}
+            {loginUser &&
+              loginUser.loginUser && (
+                <li>
+                  <a onClick={this.logout}>logout</a>
+                </li>
+              )}
           </ul>
         </header>
         {this.props.children}

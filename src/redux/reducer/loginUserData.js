@@ -1,4 +1,4 @@
-function loginUser(state = "", action) {
+function loginUser(state = {}, action) {
   switch (action.type) {
     case "LOGIN":
       if (
